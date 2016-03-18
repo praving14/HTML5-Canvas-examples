@@ -26,7 +26,7 @@ function drawNumbers(){
      
         value = getRomanNumerals(num);
      //   value = num.toString();
-        context.fillText(value, -1, 0);
+        context.fillText(value, -30, 0);
      
         context.translate(0, radius * 0.85);
         context.rotate(-ang);
@@ -103,18 +103,19 @@ function drawHand() {
    
     //Draw second hand 
     var secondcolor = "#f39c12";
-    second = (second * Math.PI / 30);
-    showTime(context, second, radius * 0.9, radius * 0.02, secondcolor);
+    var neWsecond = (second * Math.PI / 30);
+    showTime(context, neWsecond, radius * 0.9, radius * 0.02, secondcolor);
+
     //Draw minute hand
     var minutecolor = "#e67e22";
-    minute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
-    showTime(context, minute, radius * 0.7, radius * 0.05, minutecolor);
+    newMinute = (minute * Math.PI / 30) + (second * Math.PI / (30 * 60));
+    showTime(context, newMinute, radius * 0.7, radius * 0.05, minutecolor);
+
     //Draw hour hand
     hour = hour % 12;
     var hourcolor = "#e74c3c";
-    hour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (360 * 60));
-    showTime(context, hour, radius * 0.5, radius * 0.07, hourcolor);
-
+    newHour = (hour * Math.PI / 6) + (minute * Math.PI / (6 * 60)) + (second * Math.PI / (360 * 60));
+    showTime(context, newHour, radius * 0.5, radius * 0.07, hourcolor);
 }
 
 function showTime(context, angle, length, width, color) {
